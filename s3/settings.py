@@ -137,3 +137,9 @@ AWS_ACCESS_KEY_ID= os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY =  os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME =  os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME= os.getenv('AWS_S3_REGION_NAME')
+
+# throw error if AWS*** is not set
+if not AWS_ACCESS_KEY_ID throw ValueError('AWS_ACCESS_KEY_ID not set')
+if not AWS_SECRET_ACCESS_KEY throw ValueError('AWS_SECRET_ACCESS_KEY not set')
+if not AWS_STORAGE_BUCKET_NAME throw ValueError('AWS_STORAGE_BUCKET_NAME not set')
+if not AWS_S3_REGION_NAME throw ValueError('AWS_S3_REGION_NAME not set')
