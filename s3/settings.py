@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-rfy&2dhvi&(q745&7d*5yg!&%n9_^*73(2*hdyz&#3nqv=m59%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pycil.onrender.com']
+ALLOWED_HOSTS = ['pycil.onrender.com', '127.0.0.1']
 
 
 # Application definition

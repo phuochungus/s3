@@ -132,7 +132,7 @@ function path2short(path, escape = false) {
 // Virtual-hosted-style URL, ex: https://mybucket1.s3.amazonaws.com/index.html
 function object2hrefvirt(bucket, key, escape = false) {
     const enckey = key.split('/').map(x => encodeURIComponent(x)).join('/');
-    const rc = `https://${bucket}/${enckey}`;
+    const rc = `https://s3.ap-southeast-1.amazonaws.com/${bucket}/${enckey}`;
     return escape ? htmlEscape(rc) : rc;
 }
 
@@ -969,7 +969,6 @@ function UploadController($scope, SharedService) {
                 Bucket,
                 Key: (prefix || '') + (file.file.fullPath ? file.file.fullPath : file.file.name),
                 ContentType: file.file.type,
-                ACL: 'public-read',
             };
 
 
