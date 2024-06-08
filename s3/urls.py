@@ -19,7 +19,6 @@ from django.urls import path
 from s3.views import s3
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("s3/", s3, name="s3"),
+    path("/", s3, name="s3"),
 ]
 
