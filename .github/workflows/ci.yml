@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
   workflow_dispatch:
 
 jobs:
@@ -22,3 +22,7 @@ jobs:
         with:
           push: true
           tags: phuochungus/pycil
+      -
+        name: Deploy on Render
+        run: curl -X GET "https://api.render.com/deploy/srv-cpi94ja1hbls73bed200?key=${{ secrets.RENDER_API_KEY }}"
+
