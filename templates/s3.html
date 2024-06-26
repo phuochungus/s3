@@ -1,21 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 
-<!--
-Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License").
-
-You may not use this file except in compliance with the License. A copy
-of the License is located at
-
-http://aws.amazon.com/apache2.0/
-
-or in the "license" file accompanying this file. This file is distributed
-on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
--->
 
 <html lang="en" ng-app="aws-js-s3-explorer">
 
@@ -34,14 +19,7 @@ permissions and limitations under the License.
     <link rel="stylesheet" href="{% static 'explorer.css' %}">
 </head>
 
-<!-- DEBUG: Enable this for red outline on all elements -->
-<!-- <style media="screen" type="text/css"> * { outline: 1px red solid; } </style> -->
-
 <body>
-
-    <!-- Modal Settings dialog -->
-
-    <!-- Modal Add Folder dialog -->
     <div id="AddFolderModal" class="modal fade" ng-controller="AddFolderController" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -83,7 +61,6 @@ permissions and limitations under the License.
         </div>
     </div>
 
-    <!-- Info dialog -->
     <div id="InfoModal" class="modal fade" ng-controller="InfoController" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -266,7 +243,6 @@ permissions and limitations under the License.
         </div>
     </div>
 
-    <!-- Error modal -->
     <div id="ErrorModal" class="modal fade" ng-controller="ErrorController" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -317,10 +293,8 @@ permissions and limitations under the License.
     </div>
 
 
-    <!-- Hidden selector for adding files -->
     <input id="addedFiles" type="file" ng-hide="true" multiple />
 
-    <!-- Upload modal -->
     <div id="UploadModal" class="modal fade" ng-controller="UploadController" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -380,22 +354,17 @@ permissions and limitations under the License.
     {% endverbatim %}
 
 
-    <!-- Main Explorer View -->
     <div id="page-wrapper" ng-controller="ViewController">
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-primary dropzone">
 
-                    <!-- Panel including bucket/folder information and controls -->
                     <div class="panel-heading clearfix">
 
-                        <!-- Bucket selection and breadcrumbs -->
                         <div class="btn-group pull-left">
-                            <!-- Utility name -->
                             <div class="title pull-left">
                                 Amazon S3 Explorer (v2 alpha)&nbsp;
                             </div>
-                            <!-- Bucket breadcrumbs -->
                             <div class="pull-right" ng-hide="!view.settings">
                                 <ul id="breadcrumb" class="breadcrumb pull-right">
                                     <li class="active">
@@ -405,10 +374,8 @@ permissions and limitations under the License.
                             </div>
                         </div>
 
-                        <!-- Folder/Bucket radio group and progress spinner -->
                         <div id="navbuttons" class="pull-right hidden">
                             <div>
-                                <!-- Info/Refresh/Settings buttons -->
                                 <div class="btn-group">
                                     <span id="bucket-plus" style="cursor: pointer;" class="btn fa fa-folder-plus fa-2x"
                                         ng-hide="!view.settings" title="New folder" data-target="#AddFolderModal"
@@ -423,12 +390,10 @@ permissions and limitations under the License.
                                     <span id="bucket-loader" style="cursor: pointer;" class="btn fa fa-sync fa-2x"
                                         ng-hide="!view.settings" ng-click="refresh()" title="Refresh"></span>
                                 </div>
-                                <!-- Record count -->
                                 <div class="btn-group" ng-hide="!view.settings || view.keys_selected.length > 0">
                                     <span id="badgecount" style="cursor: default;" class="btn badge pull-right"
                                         title="Object count">{{view.objectCount}}</span>
                                 </div>
-                                <!-- Record/checked count -->
                                 <div class="btn-group" ng-hide="!view.settings || view.keys_selected.length == 0">
                                     <span id="badgecount" style="cursor: default;" class="btn badge pull-right"
                                         title="Selected object count">{{view.keys_selected.length}} of
@@ -438,7 +403,6 @@ permissions and limitations under the License.
                         </div>
                     </div>
 
-                    <!-- Panel including S3 object table -->
                     <div class="panel-body">
                         <table class="table table-bordered table-hover table-striped" style="width:100%"
                             id="s3objects-table">
