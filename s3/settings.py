@@ -152,3 +152,5 @@ if not AWS_STORAGE_BUCKET_NAME:
     raise ValueError("AWS_STORAGE_BUCKET_NAME not set")
 if not AWS_S3_REGION_NAME:
     raise ValueError("AWS_S3_REGION_NAME not set")
+
+CSRF_TRUSTED_ORIGINS = ["https://pycil.onrender.com"]
